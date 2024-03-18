@@ -94,3 +94,12 @@ arr_count.append(arr[-2] + arr[-1] + arr[0])
 
 # Вывод максимальной урожайности, которую может собрать собирающий модуль
 print(max(arr_count))
+
+
+    # Вариант решения Дениса
+data = [int(i) for i in input("Введите кол-во ягод: ").split()]
+
+for i in range(len(data)): # Функц range начинает генерировать значения с 0
+    if max_summa < data[i - 1] + data[i] + data[(i + 1) % len(data)]: # % len(data) чтобы не вышло за пределы индекса
+        max_summa = data[i - 1] + data[i] + data[(i + 1) % len(data)]
+print(max_summa)
