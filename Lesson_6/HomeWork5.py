@@ -37,7 +37,26 @@ for num in var3.split():
 common_elements = sorted(first_set.intersection(second_set))
 print("Числа встречаются в 1 и 2 наборах:", *common_elements)
 
-
+    # Эталонное решение
+mol = [int(x) for x in var1.split()]
+n = mol[0]
+m = mol[1]
+set_1 = set()
+set_2 = set()
+list_1 = list()
+a = [int(x) for x in var2.split()]
+k = set(a)
+for i in k:
+   set_1.add(i)
+b = [int(x) for x in var3.split()]
+k1 = set(b)
+for i in k1:
+   set_2.add(i)
+lok = set_1 & set_2
+kool = list(lok)
+kool.sort()
+for i in kool:
+   print(i, end=' ')
 
     # Задача 2
 # В фермерском хоз-ве в Карелии выращивают чернику. Черника растет на
@@ -67,4 +86,11 @@ for i in range(len(arr)):
         max_summa = arr[i - 1] + arr[i] + arr[(i + 1) % len(arr)] 
 print(max_summa)
 
+    # Эталонное решение
+arr_count = list()
+for i in range(len(arr) - 1):
+    arr_count.append(arr[i - 1] + arr[i] + arr[i + 1])
+arr_count.append(arr[-2] + arr[-1] + arr[0])
 
+# Вывод максимальной урожайности, которую может собрать собирающий модуль
+print(max(arr_count))
